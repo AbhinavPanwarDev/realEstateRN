@@ -56,6 +56,7 @@ import {
       const url = new URL(browserResult.url);
       const secret = url.searchParams.get("secret")?.toString();
       const userId = url.searchParams.get("userId")?.toString();
+      
       if (!secret || !userId) throw new Error("Create OAuth2 token failed");
   
       const session = await account.createSession(userId, secret);
